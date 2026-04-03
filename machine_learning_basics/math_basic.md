@@ -20,7 +20,7 @@
 
 ## **2. Đạo hàm của hàm trả về một số vô hướng**
 
-### **2.1** Cho hàm số $f(\mathbf{x}): \R ^n \to \R$
+### **2.1** Cho hàm số $f(\mathbf{x}): \mathbb{R}^n \to \mathbb{R}$
 
 Đạo hàm cấp 1 theo $\mathbf{x}$ được định nghĩa:
 
@@ -42,11 +42,11 @@ $$
 \begin{bmatrix}
 \frac{\partial^2 f(\mathbf{x})}{\partial x_1^2} & ... & \frac{\partial^2 f(\mathbf{x})}{\partial x_1x_n} \\
 ... & ... & ...\\
-\frac{\partial^2 f(\mathbf{x})}{\partial x_n^2} & ... & \frac{\partial^2 f(\mathbf{x})}{\partial x_nx_1}
+\frac{\partial^2 f(\mathbf{x})}{\partial x_nx_1} & ... & \frac{\partial^2 f(\mathbf{x})}{\partial x_n^2}
 \end{bmatrix}
 $$
 
-### **2.2** Cho hàm số $f(\mathbf{X}):\R^{n×d}\to\R$
+### **2.2** Cho hàm số $f(\mathbf{X}):\mathbb{R}^{n \times d}\to\mathbb{R}$
 
 Đạo hàm cấp 1 theo $\mathbf{X}$ được định nghĩa:
 
@@ -54,19 +54,19 @@ $$
 \nabla f
 =
 \begin{bmatrix}
-\frac{\partial f(\mathbf{x})}{\partial x_{11}} &
-... & \
-\frac{\partial f(\mathbf{x})}{\partial x_{1d}} \\
-... & ... & ...\\
-\frac{\partial f(\mathbf{x})}{\partial x_{n1}} &
+\frac{\partial f(\mathbf{X})}{\partial x_{11}} &
 ... &
-\frac{\partial f(\mathbf{x})}{\partial x_{nd}}
+\frac{\partial f(\mathbf{X})}{\partial x_{1d}} \\
+... & ... & ...\\
+\frac{\partial f(\mathbf{X})}{\partial x_{n1}} &
+... &
+\frac{\partial f(\mathbf{X})}{\partial x_{nd}}
 \end{bmatrix}
 $$
 
 ## **3 Đạo hàm của hàm trả về là một vector**
 
-### **3.1** Cho hàm số $f(x):\R\to\R^n$
+### **3.1** Cho hàm số $f(x):\mathbb{R}\to\mathbb{R}^n$
 
 $$
 f(x)
@@ -90,7 +90,7 @@ $$
 \end{bmatrix}
 $$
 
-### **3.2 Cho hàm số $f(\mathbf{x}): \mathbb{R}^k \to \mathbb{R}^n $**
+### **3.2** Cho hàm số $f(\mathbf{x}): \mathbb{R}^k \to \mathbb{R}^n$
 
 Đạo hàm cấp 1 theo $\mathbf{x}$ được định nghĩa:
 
@@ -115,11 +115,13 @@ $$
 
 ### **4.2 Quy tắc chuỗi (Chain rule)**
 
+Giả sử $h(\mathbf{x}) = f(g(\mathbf{x}))$, với $g: \mathbb{R}^k \to \mathbb{R}^m$ và $f: \mathbb{R}^m \to \mathbb{R}^n$. Khi đó:
+
 $$
-\nabla_{Xg} (f(X)) = (\nabla_X f(X))^T (\nabla_g f(g))
+\nabla h(\mathbf{x}) = \nabla g(\mathbf{x}) \nabla f(g(\mathbf{x}))
 $$
 
-## \*\*6 Phụ lục chứng minh
+## **5. Phụ lục chứng minh**
 
 ### **5.1 $ f: \mathbb{R}^n \to \mathbb{R},\quad f(\mathbf{x}) = a^T \mathbf{x} $**
 
@@ -194,7 +196,7 @@ $$
 Khi đó, đạo hàm cấp 1:
 
 $$
-\nabla f(\mathbf{x}) = [\nabla f_1(\mathbf{x}) \quad \dots \quad \nabla f_n(\mathbf{x})] = [\mathbf{a_i} \quad \dots \quad \mathbf{a_m}] = \mathbf{A}^T
+\nabla f(\mathbf{x}) = [\nabla f_1(\mathbf{x}) \quad \dots \quad \nabla f_m(\mathbf{x})] = [\mathbf{a_1} \quad \dots \quad \mathbf{a_m}] = \mathbf{A}^T
 $$
 
 ### **5.3 $ f: \mathbb{R}^n \to \mathbb{R},\quad f(\mathbf{x}) = \mathbf{x^T} \mathbf{A} \mathbf{x} $**
@@ -206,7 +208,7 @@ $$
 = (\mathbf{A} + \mathbf{A^T})\mathbf{x}
 $$
 
-### 5.4 **$ f: \mathbb{R}^n \to \mathbb{R},\quad f(\mathbf{x}) = \|\mathbf{A}\mathbf{x} - \mathbf{b}\|\_2^2 = (\mathbf{A}\mathbf{x} - \mathbf{b})^T (\mathbf{A}\mathbf{x} - \mathbf{b}) $**
+### **5.4 $ f: \mathbb{R}^n \to \mathbb{R},\quad f(\mathbf{x}) = \|\mathbf{A}\mathbf{x} - \mathbf{b}\|_2^2 = (\mathbf{A}\mathbf{x} - \mathbf{b})^T (\mathbf{A}\mathbf{x} - \mathbf{b}) $**
 
 $$
 \nabla f(\mathbf{x}) = 2 (\nabla (\mathbf{A}\mathbf{x} - \mathbf{b}))(\mathbf{A}\mathbf{x} - \mathbf{b}) = 2\mathbf{A^T} (\mathbf{A}\mathbf{x} - \mathbf{b})
